@@ -2760,3 +2760,93 @@ h1 {
     font-size: 1.06rem;
   }
 }
+
+/* Final readability override: make the operational UI visibly larger at 100% zoom. */
+.eyebrow,
+.subtitle,
+.header-chip,
+.metric-chip span,
+.panel-header span:first-child,
+.panel-header span:last-child,
+.stat-label,
+.cabin-label,
+.threat-card span,
+.subsection-label,
+.mission-card span,
+.side-note span,
+.truth-meta span,
+.truth-badge,
+.truth-stats,
+.action-button span,
+.lane-name,
+.lane-marker,
+.incident-stamp,
+.incident-timeline strong,
+.radar-module-header span,
+.radar-module-header strong,
+.truth-time,
+.truth-published,
+.truth-actions span {
+  font-size: 16px !important;
+  line-height: 1.35 !important;
+}
+
+.tab {
+  font-size: 18px !important;
+  line-height: 1.2 !important;
+  min-height: 60px !important;
+  padding: 12px 12px !important;
+}
+
+.metric-chip strong,
+.stat-value,
+.cabin-value,
+.threat-card strong,
+.mission-card strong,
+.truth-meta strong,
+.action-button strong {
+  font-size: 19px !important;
+  line-height: 1.28 !important;
+}
+
+.status-line,
+.alert-card,
+.data-table th,
+.data-table td,
+.event-log,
+.radar-checklist,
+.debunk-list,
+.side-note strong {
+  font-size: 18px !important;
+  line-height: 1.55 !important;
+}
+
+.truth-post p {
+  font-size: 19px !important;
+  line-height: 1.68 !important;
+}
+
+.location-callout {
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+}
+
+@media (max-width: 760px) {
+  .tab {
+    font-size: 16px !important;
+    min-height: 54px !important;
+  }
+
+  .location-callout {
+    font-size: 18px !important;
+  }
+
+  .status-line,
+  .alert-card,
+  .event-log,
+  .radar-checklist,
+  .debunk-list,
+  .truth-post p {
+    font-size: 16px !important;
+  }
+}
