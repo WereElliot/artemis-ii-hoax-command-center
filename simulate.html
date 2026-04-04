@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARTEMIS II LUNAR DESCENT SIMULATOR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="simulate.css" />
+  </head>
+  <body>
+    <div class="sim-stage">
+      <div class="sim-shell">
+        <header class="sim-header">
+          <div class="title-stack">
+            <p class="eyebrow">TEHRAN SITUATION SIMULATION // LUNAR DESCENT OVERRIDE</p>
+            <h1>ARTEMIS II MOON LANDING SIMULATOR</h1>
+            <p class="subtitle">ALIEN INTERFERENCE, RANDOM FAILURES, AND OCCASIONAL SUCCESSFUL TOUCHDOWN</p>
+          </div>
+
+          <a class="back-link" href="index.html?view=tehran">RETURN TO COMMAND CENTER</a>
+        </header>
+
+        <section class="summary-bar">
+          <div class="summary-chip">
+            <span>SIMULATION STATUS</span>
+            <strong id="sim-status">RUNNING DESCENT</strong>
+          </div>
+          <div class="summary-chip">
+            <span>MISSION ODDS</span>
+            <strong id="success-odds">UNCERTAIN</strong>
+          </div>
+          <div class="summary-chip">
+            <span>ALIEN THREAT</span>
+            <strong id="alien-state">ACTIVE</strong>
+          </div>
+          <div class="summary-chip">
+            <span>RESULT</span>
+            <strong id="result-chip">PENDING</strong>
+          </div>
+        </section>
+
+        <main class="sim-grid">
+          <section class="panel scene-panel">
+            <div class="panel-header">
+              <span>LUNAR DESCENT THEATER</span>
+              <span id="stage-label">APPROACH VECTOR</span>
+            </div>
+
+            <div class="scene" id="scene" data-stage="approach" data-outcome="pending">
+              <div class="starfield"></div>
+              <div class="earth"></div>
+              <div class="earth-glow"></div>
+              <div class="moon-haze"></div>
+              <div class="dust-cloud dust-a"></div>
+              <div class="dust-cloud dust-b"></div>
+
+              <div class="alien-group">
+                <div class="alien-ship alien-ship-a"></div>
+                <div class="alien-ship alien-ship-b"></div>
+                <div class="alien-ship alien-ship-c"></div>
+              </div>
+
+              <div class="laser laser-a"></div>
+              <div class="laser laser-b"></div>
+              <div class="laser laser-c"></div>
+
+              <div class="lander" id="lander">
+                <div class="lander-top"></div>
+                <div class="lander-core"></div>
+                <div class="lander-window"></div>
+                <div class="lander-leg leg-a"></div>
+                <div class="lander-leg leg-b"></div>
+                <div class="lander-leg leg-c"></div>
+                <div class="thruster thruster-a"></div>
+                <div class="thruster thruster-b"></div>
+              </div>
+
+              <div class="landing-zone"></div>
+              <div class="landing-zone-label">LUNAR LANDING ZONE 03</div>
+
+              <div class="moon-surface">
+                <div class="crater crater-a"></div>
+                <div class="crater crater-b"></div>
+                <div class="crater crater-c"></div>
+                <div class="ridge ridge-a"></div>
+                <div class="ridge ridge-b"></div>
+              </div>
+
+              <div class="scene-banner" id="scene-banner">ORION DESCENDING TOWARD THE LUNAR SURFACE UNDER ACTIVE ALIEN OBSERVATION.</div>
+            </div>
+          </section>
+
+          <aside class="side-column">
+            <section class="panel status-panel">
+              <div class="panel-header">
+                <span>DESCENT METRICS</span>
+                <span>HOUSTON PARODY LOOP</span>
+              </div>
+
+              <div class="metric-grid">
+                <div class="metric-card">
+                  <span>FUEL REMAINING</span>
+                  <strong id="metric-fuel">76%</strong>
+                </div>
+                <div class="metric-card">
+                  <span>HULL INTEGRITY</span>
+                  <strong id="metric-hull">91%</strong>
+                </div>
+                <div class="metric-card">
+                  <span>GUIDANCE MODE</span>
+                  <strong id="metric-guidance">AUTO HOLD</strong>
+                </div>
+                <div class="metric-card">
+                  <span>ALIEN HOSTILITY</span>
+                  <strong id="metric-hostility">ELEVATED</strong>
+                </div>
+                <div class="metric-card">
+                  <span>LUNAR DUST</span>
+                  <strong id="metric-dust">MODERATE</strong>
+                </div>
+                <div class="metric-card">
+                  <span>LANDING VECTOR</span>
+                  <strong id="metric-vector">STABLE</strong>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel outcome-panel">
+              <div class="panel-header">
+                <span>OUTCOME BOARD</span>
+                <span>RANDOMIZED EACH RUN</span>
+              </div>
+
+              <div class="outcome-badge" id="outcome-badge">PENDING DESCENT</div>
+              <p class="outcome-copy" id="outcome-copy">
+                Houston is attempting a controlled lunar touchdown while alien ships keep buzzing the landing corridor.
+              </p>
+            </section>
+
+            <section class="panel log-panel">
+              <div class="panel-header">
+                <span>MISSION LOG</span>
+                <span>LIVE SIM FEED</span>
+              </div>
+
+              <ul class="event-log" id="event-log"></ul>
+            </section>
+          </aside>
+        </main>
+
+        <section class="control-bar">
+          <button class="control-button" id="rerun-button" type="button">
+            <span>RUN NEW</span>
+            <strong>SIMULATION</strong>
+          </button>
+          <button class="control-button" id="auto-button" type="button" aria-pressed="false">
+            <span>AUTO MODE</span>
+            <strong>OFF</strong>
+          </button>
+          <button class="control-button" id="tehran-button" type="button">
+            <span>RETURN TO</span>
+            <strong>TEHRAN TAB</strong>
+          </button>
+        </section>
+      </div>
+    </div>
+
+    <script src="simulate.js"></script>
+  </body>
+</html>

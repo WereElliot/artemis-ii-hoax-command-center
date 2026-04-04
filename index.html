@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARTEMIS II HOAX COMMAND CENTER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="room-ambience"></div>
+    <div class="room-lights room-lights-left"></div>
+    <div class="room-lights room-lights-right"></div>
+
+    <div class="photo-stage">
+      <div class="monitor-shadow"></div>
+
+      <div class="monitor-shell">
+        <div class="monitor-bezel">
+          <main class="crt-screen">
+            <div class="crt-curvature"></div>
+            <div class="crt-reflection"></div>
+            <div class="crt-vignette"></div>
+            <div class="scanlines"></div>
+            <div class="phosphor-noise"></div>
+            <div class="flicker"></div>
+
+            <section class="screen-ui" id="screen-ui">
+              <header class="top-header">
+                <div class="title-block">
+                  <p class="eyebrow">NASA FLIGHT OPERATIONS // APRIL FOOLS SATELLITE OVERRIDE</p>
+                  <h1>ARTEMIS II HOAX COMMAND CENTER</h1>
+                  <p class="subtitle">LIVE ORION CAPSULE TRACKER &bull; GAME MODE ACTIVATED</p>
+                </div>
+
+                <div class="header-stack">
+                  <span class="header-chip">MISSION CLOCK <strong id="mission-clock">T+ 09:52:08</strong></span>
+                  <span class="header-chip">CRT LINK ACTIVE</span>
+                  <span class="header-chip">APRIL FOOLS SATIRE</span>
+                </div>
+              </header>
+
+              <nav class="tabs" aria-label="Command center tabs">
+                <button class="tab is-active" data-view="telemetry" type="button">LIVE TELEMETRY</button>
+                <button class="tab" data-view="hormuz" type="button">STRAIT OF HORMUZ</button>
+                <button class="tab" data-view="tehran" type="button">TEHRAN INCIDENT</button>
+                <button class="tab" data-view="tower" type="button">TRUMP TOWER</button>
+                <button class="tab" data-view="socials" type="button">SOCIALS</button>
+                <button class="tab" data-view="chaos" type="button">CHAOS MODE</button>
+              </nav>
+
+              <section class="metrics-strip">
+                <div class="metric-chip">
+                  <span>TRUTH INTEGRITY</span>
+                  <strong id="metric-truth">02%</strong>
+                </div>
+                <div class="metric-chip">
+                  <span>HOAX LEVEL</span>
+                  <strong id="metric-hoax">MAXIMUM</strong>
+                </div>
+                <div class="metric-chip">
+                  <span>GEOPOLITICAL CHAOS METER</span>
+                  <strong id="metric-chaos">OVERFLOWING</strong>
+                </div>
+              </section>
+
+              <div class="view-stack">
+                <section class="view-pane telemetry-view is-active" data-pane="telemetry">
+                  <section class="main-grid">
+                    <div class="left-column">
+                      <section class="panel hero-panel">
+                        <div class="panel-header">
+                          <span>LIVE TELEMETRY FEED</span>
+                          <span id="panel-mode">ARTEMIS II EDITION</span>
+                        </div>
+
+                        <div class="location-callout" id="location-callout">
+                          CURRENT LOCATION: CURRENTLY ORBITING THE STRAIT OF HORMUZ &mdash; EVADING REGIONAL TENSIONS AND TANKER TRAFFIC
+                        </div>
+
+                        <div class="status-line" id="status-line">STATUS: HOAX IN PROGRESS &mdash; ARTEMIS II EDITION</div>
+
+                        <div class="alert-stack">
+                          <div class="alert-card alert-red" id="alert-primary">
+                             CAPSULE SHOT DOWN OVER TEHRAN &mdash; SEARCH &amp; RESCUE DELAYED DUE TO ONGOING CONFLICT
+                          </div>
+                          <div class="alert-card alert-cyan" id="alert-secondary">
+                             ORBITING STRAIT OF HORMUZ FOR MAXIMUM GEOPOLITICAL DRAMA
+                          </div>
+                        </div>
+
+                        <div class="stats-grid">
+                          <div class="stat-card">
+                            <span class="stat-label">MISSION CLOCK</span>
+                            <strong class="stat-value" id="telemetry-clock">T+ 09:52:08</strong>
+                          </div>
+                          <div class="stat-card">
+                            <span class="stat-label">TRUTH INTEGRITY</span>
+                            <strong class="stat-value" id="telemetry-truth">02%</strong>
+                          </div>
+                          <div class="stat-card">
+                            <span class="stat-label">HOAX LEVEL</span>
+                            <div class="meter">
+                              <span class="meter-fill" id="hoax-meter"></span>
+                            </div>
+                            <strong class="stat-value meter-value" id="hoax-meter-value">91%</strong>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="panel lower-panel">
+                        <div class="panel-header panel-header-small">
+                          <span id="monitor-panel-title">HOUSTON VEHICLE MONITORING</span>
+                          <span id="monitor-panel-tag">ORION CABIN LIVE LOGS</span>
+                        </div>
+
+                        <div class="monitoring-grid">
+                          <section class="cabin-grid" aria-label="Cabin monitoring data">
+                            <div class="cabin-card">
+                              <span class="cabin-label">CABIN PRESSURE</span>
+                              <strong class="cabin-value" id="cabin-pressure">14.7 PSI</strong>
+                            </div>
+                            <div class="cabin-card">
+                              <span class="cabin-label">CABIN TEMP</span>
+                              <strong class="cabin-value" id="cabin-temp">22.4 C</strong>
+                            </div>
+                            <div class="cabin-card">
+                              <span class="cabin-label">OXYGEN MIX</span>
+                              <strong class="cabin-value" id="cabin-oxygen">21.0%</strong>
+                            </div>
+                            <div class="cabin-card">
+                              <span class="cabin-label">CO2 LEVEL</span>
+                              <strong class="cabin-value" id="cabin-co2">0.41%</strong>
+                            </div>
+                            <div class="cabin-card">
+                              <span class="cabin-label">HUMIDITY</span>
+                              <strong class="cabin-value" id="cabin-humidity">46%</strong>
+                            </div>
+                            <div class="cabin-card">
+                              <span class="cabin-label">BATTERY BUS</span>
+                              <strong class="cabin-value" id="cabin-battery">93%</strong>
+                            </div>
+                            <div class="cabin-card">
+                              <span class="cabin-label">COMM LINK</span>
+                              <strong class="cabin-value" id="cabin-comm">LOCKED</strong>
+                            </div>
+                            <div class="cabin-card">
+                              <span class="cabin-label">GUIDANCE</span>
+                              <strong class="cabin-value" id="cabin-guidance">AUTO HOLD</strong>
+                            </div>
+                          </section>
+
+                          <section class="log-cluster scroll-region">
+                            <div class="subsection-label">MISSION CONTROL LIVE LOG</div>
+
+                            <ul class="event-log" id="event-log">
+                              <li>[00:41:02 Z] Artemis II rerouted around tanker traffic for purely cinematic reasons.</li>
+                              <li>[00:41:28 Z] Truth integrity remains at 02%, within parody tolerance.</li>
+                              <li>[00:41:53 Z] Rescue dispatch delayed while legal reviews the Tehran incident tab.</li>
+                              <li>[00:42:11 Z] Flight dynamics insists none of this is in the actual mission plan.</li>
+                            </ul>
+                          </section>
+                        </div>
+                      </section>
+                    </div>
+
+                    <aside class="right-column">
+                      <section class="panel mission-panel">
+                        <div class="panel-header">
+                          <span id="mission-panel-title">MISSION SNAPSHOT</span>
+                          <span id="mission-panel-tag">NAVCOM BLUE</span>
+                        </div>
+
+                        <div class="mission-card">
+                          <span>TRACK ID</span>
+                          <strong>ORION / HUMOR / 1980-CRT</strong>
+                        </div>
+                        <div class="mission-card">
+                          <span>ACTIVE REGION</span>
+                          <strong id="region-value">STRAIT OF HORMUZ</strong>
+                        </div>
+                        <div class="mission-card">
+                          <span>ESCALATION INDEX</span>
+                          <strong id="escalation-value">CRIT-4</strong>
+                        </div>
+                        <div class="mission-card">
+                          <span>CREW COMMENT</span>
+                          <strong id="crew-comment">"Please stop mixing lunar flight with geopolitical drama."</strong>
+                        </div>
+
+                        <section class="radar-module">
+                          <div class="radar-module-header">
+                            <span>THREAT RADAR</span>
+                            <strong id="radar-label">HORMUZ SURFACE TRACK</strong>
+                          </div>
+
+                          <div class="radar-scope" aria-hidden="true">
+                            <div class="radar-ring ring-1"></div>
+                            <div class="radar-ring ring-2"></div>
+                            <div class="radar-ring ring-3"></div>
+                            <div class="radar-crosshair radar-crosshair-x"></div>
+                            <div class="radar-crosshair radar-crosshair-y"></div>
+                            <div class="radar-sweep"></div>
+                            <span class="radar-blip blip-a"></span>
+                            <span class="radar-blip blip-b"></span>
+                            <span class="radar-blip blip-c"></span>
+                            <span class="radar-blip blip-d"></span>
+                          </div>
+
+                          <p class="radar-note" id="radar-note">
+                            Escort traces, tanker clutter, and contradictory spoofing signals remain on scope.
+                          </p>
+                        </section>
+                      </section>
+                    </aside>
+                  </section>
+                </section>
+
+                <section class="view-pane hormuz-view" data-pane="hormuz">
+                  <section class="hormuz-grid">
+                    <section class="panel hormuz-chart-panel">
+                      <div class="panel-header">
+                        <span>SHIPPING CORRIDOR TRACK</span>
+                        <span>STRAIT VESSEL PLOT</span>
+                      </div>
+
+                      <div class="location-callout">
+                        CURRENT LOCATION: HOLDING PATTERN ABOVE THE STRAIT OF HORMUZ - PERFORMING TOTALLY NONSTANDARD NAVAL-THEATER FLYBYS
+                      </div>
+
+                      <div class="subsection-label">ACTIVE SEA LANES</div>
+                      <div class="lane-board">
+                        <div class="lane-track lane-track-a">
+                          <span class="lane-name">OUTBOUND TANKERS</span>
+                          <span class="lane-marker marker-1">ORION</span>
+                          <span class="lane-marker marker-2">ECHO-14</span>
+                        </div>
+                        <div class="lane-track lane-track-b">
+                          <span class="lane-name">ESCORT BAND</span>
+                          <span class="lane-marker marker-3">NAV-2</span>
+                          <span class="lane-marker marker-4">DECOY</span>
+                        </div>
+                        <div class="lane-track lane-track-c">
+                          <span class="lane-name">SPOOF TRAFFIC</span>
+                          <span class="lane-marker marker-5">GHOST</span>
+                          <span class="lane-marker marker-6">CLUTTER</span>
+                        </div>
+                      </div>
+
+                      <div class="sea-card-grid">
+                        <div class="threat-card">
+                          <span>CONVOY STATUS</span>
+                          <strong>SHADOWING ORION</strong>
+                        </div>
+                        <div class="threat-card">
+                          <span>TANKER CLUTTER</span>
+                          <strong>EXTREME</strong>
+                        </div>
+                        <div class="threat-card">
+                          <span>SPOOF CONTACTS</span>
+                          <strong>07 RETURNS</strong>
+                        </div>
+                        <div class="threat-card">
+                          <span>NAVAL DRAMA</span>
+                          <strong>REDLINE</strong>
+                        </div>
+                      </div>
+                    </section>
+
+                    <section class="panel hormuz-ops-panel">
+                      <div class="panel-header">
+                        <span>MARITIME WATCH FLOOR</span>
+                        <span>NAVAL OVERLAY</span>
+                      </div>
+
+                      <div class="mission-card">
+                        <span>ACTIVE REGION</span>
+                        <strong>HORMUZ CORRIDOR</strong>
+                      </div>
+                      <div class="mission-card">
+                        <span>ESCORT STATUS</span>
+                        <strong>COASTAL SHADOW TRACK</strong>
+                      </div>
+                      <div class="mission-card">
+                        <span>SEA STATE</span>
+                        <strong>CALM WATER / LOUD POLITICS</strong>
+                      </div>
+                      <div class="mission-card">
+                        <span>COMMENT</span>
+                        <strong>"Mission control would like the capsule away from commercial shipping, thanks."</strong>
+                      </div>
+
+                      <div class="subsection-label">SURFACE TRAFFIC LOG</div>
+                      <ul class="event-log scroll-region">
+                        <li>[00:48:01 Z] Guidance software replaced lunar insertion with tanker avoidance mode.</li>
+                        <li>[00:48:19 Z] Cabin atmosphere stable while comm loops fill with maritime objections.</li>
+                        <li>[00:48:46 Z] Maritime radar requested that Orion stop doing dramatic victory laps.</li>
+                        <li>[00:49:08 Z] Public affairs marked this panel as satire only and kept the glow on.</li>
+                        <li>[00:49:44 Z] Strait lane models now show one capsule and too many opinions.</li>
+                      </ul>
+                    </section>
+                  </section>
+                </section>
+
+                <section class="view-pane tehran-view" data-pane="tehran">
+                  <section class="tehran-grid">
+                    <aside class="panel tehran-summary-panel">
+                      <div class="panel-header">
+                        <span>INCIDENT SNAPSHOT</span>
+                        <span>RED FILE</span>
+                      </div>
+
+                      <div class="incident-stamp">INCIDENT REVIEW PENDING</div>
+
+                      <div class="mission-card">
+                        <span>TRACK ID</span>
+                        <strong>ORION / INCIDENT / AIRSPACE</strong>
+                      </div>
+                      <div class="mission-card">
+                        <span>ACTIVE REGION</span>
+                        <strong>TEHRAN INCIDENT</strong>
+                      </div>
+                      <div class="mission-card">
+                        <span>ESCALATION INDEX</span>
+                        <strong>CRIT-5</strong>
+                      </div>
+                      <div class="mission-card">
+                        <span>LEGAL QUEUE</span>
+                        <strong>STACKED TO THE CEILING</strong>
+                      </div>
+
+                      <div class="subsection-label">AIRSPACE RETURN</div>
+                      <div class="radar-scope tehran-scope" aria-hidden="true">
+                        <div class="radar-ring ring-1"></div>
+                        <div class="radar-ring ring-2"></div>
+                        <div class="radar-ring ring-3"></div>
+                        <div class="radar-crosshair radar-crosshair-x"></div>
+                        <div class="radar-crosshair radar-crosshair-y"></div>
+                        <div class="radar-sweep"></div>
+                        <span class="radar-blip blip-a"></span>
+                        <span class="radar-blip blip-c"></span>
+                        <span class="radar-blip blip-e"></span>
+                      </div>
+                    </aside>
+
+                    <section class="panel tehran-dossier-panel">
+                      <div class="panel-header">
+                        <span>INCIDENT DOSSIER</span>
+                        <span>RESPONSE TIMELINE</span>
+                      </div>
+
+                      <div class="location-callout">
+                        CURRENT LOCATION: LAST SEEN NEAR TEHRAN AIRSPACE - SEARCH AND RESCUE STUCK IN A VERY BAD PUBLIC RELATIONS CYCLE
+                      </div>
+
+                      <div class="alert-stack">
+                        <div class="alert-card alert-red">
+                          ALERT: CAPSULE SHOT DOWN OVER TEHRAN - RECOVERY TIMELINE UNKNOWN, MEMO THREAD EXPANDING
+                        </div>
+                        <div class="alert-card alert-cyan">
+                          AIRSPACE: DEFENSE CONFUSION NOW EXCEEDS SAFE SATIRE PARAMETERS
+                        </div>
+                      </div>
+
+                      <div class="timeline-shell scroll-region">
+                        <div class="subsection-label">RESPONSE TIMELINE</div>
+                        <ol class="incident-timeline">
+                          <li><strong>00:55:04 Z</strong><span>Houston flagged a pressure dip during the fictional incident review.</span></li>
+                          <li><strong>00:55:21 Z</strong><span>Comms switched to backup routing while analysts argued with the scenario.</span></li>
+                          <li><strong>00:55:57 Z</strong><span>Operations noted the tone problem before anyone fixed the telemetry overlay.</span></li>
+                          <li><strong>00:56:19 Z</strong><span>Compliance added more disclaimers and still could not calm the siren.</span></li>
+                          <li><strong>00:56:42 Z</strong><span>Search planners requested a less ridiculous map and received none.</span></li>
+                        </ol>
+                      </div>
+                    </section>
+                  </section>
+                </section>
+
+                <section class="view-pane tower-view" data-pane="tower">
+                  <section class="tower-grid">
+                    <section class="panel tower-skyline-panel">
+                      <div class="panel-header">
+                        <span>SKYLINE FLIGHT PATH</span>
+                        <span>MIDTOWN OVERLAY</span>
+                      </div>
+
+                      <div class="location-callout tower-callout">
+                        CURRENT LOCATION: LOW PASS OVER TRUMP TOWER - CAPSULE BROADCASTING GOLD-TINTED SELFIES TO THE SOCIALS TAB
+                      </div>
+
+                      <div class="skyline-board">
+                        <div class="skyline-column skyline-column-a"></div>
+                        <div class="skyline-column skyline-column-b"></div>
+                        <div class="skyline-column skyline-column-c"></div>
+                        <div class="skyline-column skyline-column-d"></div>
+                        <div class="skyline-column skyline-column-e"></div>
+                        <div class="flight-arc"></div>
+                      </div>
+
+                      <div class="urban-card-grid">
+                        <div class="threat-card">
+                          <span>CAMERA SWARM</span>
+                          <strong>214 ACTIVE LENSES</strong>
+                        </div>
+                        <div class="threat-card">
+                          <span>GOLD TINT LEVEL</span>
+                          <strong>EXCESSIVE</strong>
+                        </div>
+                        <div class="threat-card">
+                          <span>PRESSURE INDEX</span>
+                          <strong>SURGING</strong>
+                        </div>
+                      </div>
+                    </section>
+
+                    <aside class="panel tower-media-panel">
+                      <div class="panel-header">
+                        <span>MEDIA PRESSURE DESK</span>
+                        <span>REACTION LOOP</span>
+                      </div>
+
+                      <div class="mission-card">
+                        <span>ACTIVE REGION</span>
+                        <strong>MIDTOWN MANHATTAN</strong>
+                      </div>
+                      <div class="mission-card">
+                        <span>TRENDING LINE</span>
+                        <strong>#CapsuleSelfieLoop</strong>
+                      </div>
+                      <div class="mission-card">
+                        <span>COMMENT</span>
+                        <strong>"This was supposed to be translunar, not a publicity loop."</strong>
+                      </div>
+
+                      <div class="subsection-label">PRESS DESK CHRONOLOGY</div>
+                      <ul class="event-log scroll-region">
+                        <li>[01:02:10 Z] Houston saw reflected glare spike across the vehicle monitoring board.</li>
+                        <li>[01:02:31 Z] Cabin metrics remain stable despite an absurd Manhattan detour.</li>
+                        <li>[01:03:03 Z] Social engagement outpaced anything in the flight plan.</li>
+                        <li>[01:03:28 Z] Guidance annotated the route with "please return to actual space soon."</li>
+                        <li>[01:03:49 Z] Midtown reaction desk requested fewer helicopters and more skepticism.</li>
+                      </ul>
+                    </aside>
+                  </section>
+                </section>
+
+                <section class="view-pane socials-view" data-pane="socials">
+                  <div class="socials-layout">
+                    <section class="main-grid socials-grid">
+                      <section class="panel socials-panel">
+                        <div class="panel-header">
+                          <span>TRUTH SOCIAL FEED</span>
+                          <span>PARODY MOCK POSTS</span>
+                      </div>
+
+                      <div class="social-feed scroll-region" id="social-feed"></div>
+
+                      <section class="socials-actions" aria-label="Socials control actions">
+                        <button class="action-button" type="button" data-action="more-posts">
+                          <span>VIEW MORE</span>
+                          <strong>TRUTH POSTS</strong>
+                        </button>
+                        <button class="action-button" type="button" data-action="more-debunking">
+                          <span>READ MORE</span>
+                          <strong>FOOLS DEBUNKING</strong>
+                        </button>
+                        <button class="action-button" type="button" data-action="simulate-chaos">
+                          <span>SIMULATE</span>
+                          <strong>TEHRAN CHAOS</strong>
+                        </button>
+                      </section>
+                    </section>
+
+                      <section class="panel debunk-panel">
+                        <div class="panel-header">
+                          <span>FOOLS DEBUNKING THE MOON LANDING</span>
+                          <span>CHAOS DOSSIER</span>
+                        </div>
+
+                        <div class="debunk-scroll scroll-region" id="debunk-scroll">
+                          <ul class="debunk-list">
+                            <li>Flag waving in vacuum? Studio fan confirmed during Tehran incident</li>
+                            <li>No stars in photos? Iranian air defense lights too bright</li>
+                            <li>Shadows don't match? Multiple spotlights while orbiting Strait of Hormuz</li>
+                            <li>Artemis II keeps getting shot down &mdash; clear proof the Moon is fake and Iran knows it!</li>
+                          </ul>
+
+                          <div class="side-note">
+                            <span>APRIL FOOLS ANALYSIS</span>
+                            <strong>Official NASA blue aesthetic, completely unofficial conspiracy logic.</strong>
+                          </div>
+                        </div>
+                      </section>
+                    </section>
+                  </div>
+                </section>
+
+                <section class="view-pane radar-view" data-pane="radar">
+                  <section class="main-grid radar-grid">
+                    <section class="panel radar-focus-panel">
+                      <div class="panel-header">
+                        <span>HOUSTON THREAT RADAR</span>
+                        <span id="radar-view-mode">ALIEN ESCORT ARC</span>
+                      </div>
+
+                      <div class="radar-focus-grid">
+                        <div class="radar-scope radar-scope-large" aria-hidden="true">
+                          <div class="radar-ring ring-1"></div>
+                          <div class="radar-ring ring-2"></div>
+                          <div class="radar-ring ring-3"></div>
+                          <div class="radar-ring ring-4"></div>
+                          <div class="radar-crosshair radar-crosshair-x"></div>
+                          <div class="radar-crosshair radar-crosshair-y"></div>
+                          <div class="radar-sweep"></div>
+                          <span class="radar-blip blip-a"></span>
+                          <span class="radar-blip blip-b"></span>
+                          <span class="radar-blip blip-c"></span>
+                          <span class="radar-blip blip-d"></span>
+                          <span class="radar-blip blip-e"></span>
+                          <span class="radar-blip blip-f"></span>
+                        </div>
+
+                        <div class="radar-focus-copy">
+                          <div class="radar-banner" id="radar-banner">
+                            UNIDENTIFIED ALIEN ESCORTS ARE TRACKING THE CAPSULE WHILE ICBM TRAJECTORIES STACK ACROSS THE OUTER RING.
+                          </div>
+
+                          <div class="threat-metric-grid">
+                            <div class="threat-card">
+                              <span>ICBM TRACKS</span>
+                              <strong id="radar-icbm">05 HOT TRACKS</strong>
+                            </div>
+                            <div class="threat-card">
+                              <span>ALIEN ECHOES</span>
+                              <strong id="radar-ufo">03 CONTACTS</strong>
+                            </div>
+                            <div class="threat-card">
+                              <span>SHEPHERD REPORTS</span>
+                              <strong id="radar-shepherd">06 FIRING TEAMS</strong>
+                            </div>
+                            <div class="threat-card">
+                              <span>DEFCON PARODY</span>
+                              <strong id="radar-defcon">SCREAMING</strong>
+                            </div>
+                          </div>
+
+                          <div class="alert-card alert-red radar-inline-alert" id="radar-primary-alert">
+                            ALERT: MULTIPLE ICBM SIGNATURES DETECTED NEAR THE CAPSULE ESCORT STACK
+                          </div>
+                          <div class="alert-card alert-cyan radar-inline-alert" id="radar-secondary-alert">
+                            SURFACE REPORTS: HILLSIDE SHEPHERDS FIRING AT STRAY ESCORT SHADOWS AFTER MISTAKING THEM FOR OMENS
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+                    <aside class="radar-side-column">
+                      <section class="panel radar-side-panel scroll-region">
+                        <div class="panel-header">
+                          <span>THREAT DOSSIER</span>
+                          <span>HOUSTON WATCH FLOOR</span>
+                        </div>
+
+                        <div class="subsection-label">TRACKED THREATS</div>
+                        <ul class="radar-checklist" id="radar-threat-list">
+                          <li>Alien scout ships pacing the capsule escort corridor</li>
+                          <li>ICBM trajectories intersecting the parody flight path</li>
+                          <li>Ground muzzle flashes from shepherd teams firing uphill</li>
+                          <li>Houston warning console demanding several new disclaimers</li>
+                        </ul>
+
+                        <div class="subsection-label">INCIDENT LOG</div>
+                        <ul class="event-log radar-event-log" id="radar-event-log">
+                          <li>[01:16:03 Z] Radar tab opened and immediately found unidentified escort triangles on the outer ring.</li>
+                          <li>[01:16:24 Z] Ballistic warning software insists several tracks look far too dramatic to be real.</li>
+                          <li>[01:16:49 Z] Ridge shepherd teams reported firing at escort shadows crossing the valley haze.</li>
+                          <li>[01:17:12 Z] Mission control classified the entire panel as parody and left the siren on anyway.</li>
+                        </ul>
+                      </section>
+                    </aside>
+                  </section>
+                </section>
+
+                <section class="view-pane chaos-view" data-pane="chaos">
+                  <section class="chaos-grid">
+                    <section class="panel chaos-callout-panel">
+                      <div class="panel-header">
+                        <span>CHAOS MODE MAXIMUM</span>
+                        <span>OMEGA STACK</span>
+                      </div>
+
+                      <div class="location-callout">
+                        CURRENT LOCATION: EVERYWHERE AT ONCE - STRAIT OF HORMUZ, TEHRAN, TRUMP TOWER, AND A LEGAL REVIEW MEETING
+                      </div>
+
+                      <div class="alert-stack">
+                        <div class="alert-card alert-red">
+                          ALERT: MULTIPLE CONTRADICTORY INCIDENTS DETECTED; STORY COHERENCE HAS LEFT LOW EARTH ORBIT
+                        </div>
+                        <div class="alert-card alert-cyan">
+                          CHAOS ENGINE: BLENDING GEOPOLITICAL DRAMA, SOCIAL POSTS, AND MOON HOAXES
+                        </div>
+                      </div>
+                    </section>
+
+                    <section class="panel chaos-stack-panel">
+                      <div class="panel-header">
+                        <span>CONFLICT STACK</span>
+                        <span>ALL CHANNELS</span>
+                      </div>
+
+                      <div class="chaos-tile-grid">
+                        <div class="threat-card"><span>TRUTH INTEGRITY</span><strong>00%</strong></div>
+                        <div class="threat-card"><span>HOAX LEVEL</span><strong>100%</strong></div>
+                        <div class="threat-card"><span>MISSION STATE</span><strong>MELTDOWN</strong></div>
+                        <div class="threat-card"><span>DEFENSE NOISE</span><strong>UNUSABLE</strong></div>
+                        <div class="threat-card"><span>SOCIAL FALLOUT</span><strong>MAXIMUM</strong></div>
+                        <div class="threat-card"><span>LEGAL REVIEW</span><strong>SPIRALING</strong></div>
+                      </div>
+                    </section>
+
+                    <section class="panel chaos-diagnostics-panel">
+                      <div class="panel-header">
+                        <span>FAILED DIAGNOSTICS</span>
+                        <span>SCRAMBLE BOARD</span>
+                      </div>
+
+                      <div class="cabin-grid">
+                        <div class="cabin-card"><span class="cabin-label">CABIN PRESSURE</span><strong class="cabin-value">13.9 PSI</strong></div>
+                        <div class="cabin-card"><span class="cabin-label">CABIN TEMP</span><strong class="cabin-value">25.3 C</strong></div>
+                        <div class="cabin-card"><span class="cabin-label">OXYGEN MIX</span><strong class="cabin-value">20.7%</strong></div>
+                        <div class="cabin-card"><span class="cabin-label">CO2 LEVEL</span><strong class="cabin-value">0.73%</strong></div>
+                        <div class="cabin-card"><span class="cabin-label">BATTERY BUS</span><strong class="cabin-value">82%</strong></div>
+                        <div class="cabin-card"><span class="cabin-label">GUIDANCE</span><strong class="cabin-value">MANUAL PANIC</strong></div>
+                      </div>
+                    </section>
+
+                    <section class="panel chaos-log-panel scroll-region">
+                      <div class="panel-header">
+                        <span>MIXED INCIDENT LOG</span>
+                        <span>OMEGA FEED</span>
+                      </div>
+
+                      <ul class="event-log">
+                        <li>[01:10:14 Z] Houston lost all narrative discipline but kept the vehicle dashboard alive.</li>
+                        <li>[01:10:41 Z] Cabin telemetry and storyline coherence both entered unstable territory.</li>
+                        <li>[01:11:06 Z] Truth integrity hit 00% and then kept trying to go lower.</li>
+                        <li>[01:11:27 Z] Entire command center now runs on irony, blue glow, and poor decisions.</li>
+                        <li>[01:11:52 Z] Radar, socials, skyline, and legal channels merged into one bad idea.</li>
+                      </ul>
+                    </section>
+                  </section>
+                </section>
+              </div>
+
+              <section class="socials-action-bar" aria-label="Socials control actions">
+                <button class="action-button" type="button" data-action="more-posts">
+                  <span>VIEW MORE</span>
+                  <strong>TRUTH POSTS</strong>
+                </button>
+                <button class="action-button" type="button" data-action="more-debunking">
+                  <span>READ MORE</span>
+                  <strong>FOOLS DEBUNKING</strong>
+                </button>
+                <button class="action-button" type="button" data-action="simulate-chaos">
+                  <span>SIMULATE</span>
+                  <strong>TEHRAN CHAOS</strong>
+                </button>
+              </section>
+            </section>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <div class="sequence-overlay" id="sequence-overlay" data-phase="idle" aria-live="assertive" aria-atomic="true">
+      <div class="sequence-noise"></div>
+      <div class="sequence-scanlines"></div>
+
+      <section class="sequence-phase sequence-alert-card">
+        <div class="sequence-alert-symbol" aria-hidden="true">⚠</div>
+        <div class="sequence-alert-top">CAUTION // FULL SCREEN ALERT</div>
+        <div class="sequence-alert-main">RED ALERT</div>
+        <div class="sequence-alert-copy">
+          CRITICAL WARNING SEQUENCE INITIATED. COMMAND CENTER DISPLAY HAS ENTERED MAXIMUM SATIRICAL ESCALATION.
+        </div>
+        <div class="sequence-alert-ribbon">SYSTEM ALERT ACTIVE</div>
+      </section>
+
+      <section class="sequence-phase sequence-message-card sequence-april-card">
+        <span class="sequence-message-tag">SATIRE REVEAL</span>
+        <strong class="sequence-message-main">APRIL FOOLS DAY</strong>
+      </section>
+
+      <section class="sequence-phase sequence-message-card sequence-palestine-card">
+        <strong class="sequence-message-main">FREE PALESTINE</strong>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
