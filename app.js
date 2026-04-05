@@ -3,6 +3,10 @@ const telemetryClock = document.getElementById("telemetry-clock");
 const tabs = Array.from(document.querySelectorAll(".tab"));
 const panes = Array.from(document.querySelectorAll(".view-pane"));
 const screenUi = document.getElementById("screen-ui");
+const tabsRail = document.querySelector(".tabs");
+const socialSubtabs = Array.from(document.querySelectorAll(".socials-subtab"));
+const socialSubviews = Array.from(document.querySelectorAll(".socials-subview"));
+const socialSubtabsRail = document.querySelector(".socials-subtabs");
 
 const metricTruth = document.getElementById("metric-truth");
 const metricHoax = document.getElementById("metric-hoax");
@@ -17,6 +21,7 @@ const actionButtons = Array.from(document.querySelectorAll("[data-action]"));
 const alertSymbol = document.querySelector(".sequence-alert-symbol");
 
 const validViews = ["telemetry", "hormuz", "tehran", "tower", "socials", "chaos"];
+const validSocialPanes = ["truths", "fools", "simulate"];
 const urlParams = new URLSearchParams(window.location.search);
 const forcedSequencePhase = urlParams.get("phase");
 const validSequencePhases = new Set(["idle", "alert", "april", "palestine"]);
@@ -50,96 +55,7 @@ const viewMetrics = {
 };
 
 const socialState = {
-  posts: [
-    {
-      author: "Donald J. Trump",
-      handle: "@realDonaldTrump",
-      meta: "truth social parody post",
-      badge: "TRUTH",
-      kind: "trump",
-      avatar: "T",
-      body:
-        "This Artemis II mission is a TOTAL DISASTER! The capsule isn't going to the Moon, it's orbiting the Strait of Hormuz and got shot down over Tehran. Sad! We all know the Moon landings were fake anyway!",
-      stats: ["Replies 18.4K", "Retruths 54.1K", "Likes 229K"]
-    },
-    {
-      author: "Donald J. Trump",
-      handle: "@realDonaldTrump",
-      meta: "truth social parody post",
-      badge: "TRUTH",
-      kind: "trump",
-      avatar: "T",
-      body:
-        "Just heard the capsule was shot down over Tehran. Terrible! Why are we sending astronauts into Iran when we could be building hotels on Mars? Make Space Great Again!",
-      stats: ["Replies 11.7K", "Retruths 39.8K", "Likes 173K"]
-    },
-    {
-      author: "Senior Wire Desk",
-      handle: "@SeniorWireHQ",
-      meta: "senior agency brief - satirical post",
-      badge: "WIRE",
-      kind: "agency",
-      avatar: "SW",
-      body:
-        "Senior desk update: Houston monitors show cabin pressure nominal, hoax level elevated, and the Orion capsule apparently wandering between the Strait of Hormuz and several headlines it has no business entering.",
-      stats: ["Replies 6.2K", "Retruths 18.9K", "Likes 72K"]
-    },
-    {
-      author: "Global Affairs Pool",
-      handle: "@GlobalPoolDesk",
-      meta: "foreign bureau summary - satirical post",
-      badge: "POOL",
-      kind: "agency",
-      avatar: "GP",
-      body:
-        "Senior correspondents tracking the parody mission report overlapping claims of Tehran incident fallout, tanker-lane orbit loops, and at least one briefing note asking whether the Moon has retained outside counsel.",
-      stats: ["Replies 4.8K", "Retruths 15.4K", "Likes 63K"]
-    },
-    {
-      author: "Orbital News Bureau",
-      handle: "@OrbitalBureau",
-      meta: "senior science desk - satirical post",
-      badge: "SCI",
-      kind: "agency",
-      avatar: "ON",
-      body:
-        "Science desk memo: cabin oxygen remains steady while geopolitical absurdity spikes. Sources confirm the vehicle dashboard in Houston looks more professional than the story attached to it.",
-      stats: ["Replies 3.9K", "Retruths 12.1K", "Likes 48K"]
-    },
-    {
-      author: "Continental Bulletin Service",
-      handle: "@CBSeniorDesk",
-      meta: "senior editor note - satirical post",
-      badge: "EDIT",
-      kind: "agency",
-      avatar: "CB",
-      body:
-        "Editors are told the capsule now faces alien escort shadows, ICBM threat arcs, and hillside shepherd gunfire. Nobody on the senior desk can explain why any of this made it onto a moon mission tracker.",
-      stats: ["Replies 5.1K", "Retruths 14.7K", "Likes 59K"]
-    },
-    {
-      author: "Capitol Orbit Pool",
-      handle: "@OrbitPoolPress",
-      meta: "senior pooled briefing - satirical post",
-      badge: "POOL",
-      kind: "agency",
-      avatar: "OP",
-      body:
-        "Pool report: mission control kept the cabin telemetry neat, the radar board loud, and the satire disclaimer technically visible while the capsule allegedly executed another impossible detour.",
-      stats: ["Replies 4.3K", "Retruths 13.2K", "Likes 51K"]
-    },
-    {
-      author: "Evening Monitor Agency",
-      handle: "@EveningMonitor",
-      meta: "senior night desk - satirical post",
-      badge: "NIGHT",
-      kind: "agency",
-      avatar: "EM",
-      body:
-        "Night desk summary: Truth Integrity remains stuck near zero while the Houston board continues logging cabin temperature, battery bus, and guidance mode like this is somehow still a serious space operation.",
-      stats: ["Replies 3.4K", "Retruths 10.6K", "Likes 44K"]
-    }
-  ],
+  posts: buildSocialPosts(),
   debunks: [
     "Flag waving in vacuum? Studio fan confirmed during Tehran incident",
     "No stars in photos? Iranian air defense lights too bright",
@@ -148,6 +64,177 @@ const socialState = {
   ],
   note: "Official NASA blue aesthetic, completely unofficial conspiracy logic."
 };
+const socialsUiState = {
+  activePane: validSocialPanes.includes(urlParams.get("social")) ? urlParams.get("social") : "truths"
+};
+
+function buildSocialPosts() {
+  const sources = [
+    {
+      author: "Donald J. Trump (Parody)",
+      handle: "@realDonaldTrump_satire",
+      meta: "clearly labeled parody account",
+      badge: "TRUTH",
+      kind: "trump",
+      avatar: "T",
+      openings: [
+        "This Artemis II thing is a total mess.",
+        "Nobody told me a moon capsule could spend this much time in traffic.",
+        "The so-called mission experts are doing a terrible job.",
+        "I have seen many launches. This one has too many detours.",
+        "Houston keeps pretending this is normal. It is not normal."
+      ],
+      closers: [
+        "Sad!",
+        "Very unfair to the Moon.",
+        "Total disaster management.",
+        "Everybody knows it.",
+        "Make Space Great Again."
+      ]
+    },
+    {
+      author: "Elon Musk (Parody)",
+      handle: "@elon_satire",
+      meta: "clearly labeled parody account",
+      badge: "X-POST",
+      kind: "agency",
+      avatar: "E",
+      openings: [
+        "Strong view: this would have been resolved by a software rollback.",
+        "Recommend a rapid product rethink for the capsule routing stack.",
+        "Honestly the mission needs fewer conspiracy panels and more version control.",
+        "The guidance UI has vibes, but the trajectory logic is still cursed.",
+        "If the capsule keeps orbiting shipping lanes, that is technically a logistics startup."
+      ],
+      closers: [
+        "Needs patch notes.",
+        "Probably just a scaling issue.",
+        "Extremely debug-able.",
+        "I would ship a hotfix.",
+        "Many such cases."
+      ]
+    },
+    {
+      author: "Seyed Abbas Araghchi (Parody)",
+      handle: "@seyedabbasaraghchi_parody",
+      meta: "real public figure name, clearly labeled parody",
+      badge: "MFA",
+      kind: "diplomatic",
+      avatar: "AA",
+      openings: [
+        "Foreign ministry note, entirely satirical:",
+        "Diplomatic observation, in obvious parody form:",
+        "For the avoidance of doubt, this is a parody post:",
+        "Ministerial clarification, written for a joke dashboard:",
+        "Statement for the blue-glow record:"
+      ],
+      closers: [
+        "This is not an actual statement.",
+        "Please read the parody label before starting an incident room.",
+        "No moon capsule should require this much diplomatic paperwork.",
+        "The Moon remains outside normal consular procedure.",
+        "Respectfully, the dashboard has become the crisis."
+      ]
+    },
+    {
+      author: "Iranian Foreign Ministry Media Desk (Parody)",
+      handle: "@iran_mfa_desk_parody",
+      meta: "clearly labeled parody account",
+      badge: "DESK",
+      kind: "agency",
+      avatar: "MD",
+      openings: [
+        "Foreign ministry desk note:",
+        "Media guidance this evening:",
+        "Consular update, entirely satirical:",
+        "Diplomatic clarification:",
+        "Statement draft number fourteen:"
+      ],
+      closers: [
+        "Please stop cc'ing the embassy on moon traffic.",
+        "No further comment until the capsule files customs forms.",
+        "Our interns are exhausted.",
+        "Legal review remains ongoing.",
+        "Respectfully, this is not how orbital planning works."
+      ]
+    },
+  ];
+
+  const scenarios = [
+    "The capsule is still circling the Strait of Hormuz like it missed three exits and a very important briefing.",
+    "Mission control keeps logging normal cabin pressure while the story itself has completely depressurized.",
+    "Every dashboard in Houston looks professional right up until the diplomatic subplot starts talking.",
+    "Regional tension graphics are now somehow sharing screen space with a moon mission disclaimer.",
+    "The Tehran incident tab keeps generating more paperwork than thrust.",
+    "Radar still shows escort triangles, tanker clutter, and one very confused public affairs team.",
+    "The vehicle keeps doing dramatic holding patterns while the narrative refuses to land.",
+    "Truth Integrity remains near zero but the font treatment is admittedly strong.",
+    "The capsule appears to be avoiding the Moon in favor of maximum geopolitical theatre.",
+    "Houston says the cabin is nominal and the satire engine says otherwise.",
+    "The flight path now looks like somebody drew foreign policy with a glow stick.",
+    "Mission planners are once again asking why embassy desks are in a lunar mission loop.",
+    "The radar wall is full, the legal queue is full, and the Moon is still waiting.",
+    "The social feed is moving faster than the capsule and neither one is especially reassuring.",
+    "Guidance software would like everyone to stop calling a detour a strategy."
+  ];
+
+  const punchlines = [
+    "The fries budget appears better funded than the flight plan.",
+    "At this point the disclaimer should get its own command console.",
+    "Nobody can explain why the radar is louder than the rocket.",
+    "This is now ninety percent dashboard and ten percent trajectory.",
+    "The interns have started filing orbital complaints.",
+    "Even the scanlines look skeptical.",
+    "The mission clock is moving, but confidence is not.",
+    "There are now more tabs than explanations.",
+    "Somebody keeps calling this a soft landing for public relations.",
+    "The capsule has become the busiest tourist in the control room."
+  ];
+
+  const statsSeed = [
+    ["Replies 18.4K", "Retruths 54.1K", "Likes 229K"],
+    ["Replies 11.7K", "Retruths 39.8K", "Likes 173K"],
+    ["Replies 7.1K", "Retruths 22.4K", "Likes 91K"],
+    ["Replies 5.6K", "Retruths 18.2K", "Likes 74K"],
+    ["Replies 3.9K", "Retruths 12.8K", "Likes 53K"]
+  ];
+
+  const timeSeed = ["2m", "5m", "9m", "14m", "22m", "31m", "45m", "1h", "2h", "3h"];
+  const publishedSeed = [
+    "8:14 PM • Apr 5, 2026 • Truth Social parody feed",
+    "8:31 PM • Apr 5, 2026 • Houston satire desk",
+    "8:42 PM • Apr 5, 2026 • Mission control joke wire",
+    "9:05 PM • Apr 5, 2026 • Geopolitical comedy monitor",
+    "9:27 PM • Apr 5, 2026 • Orbital rumor terminal"
+  ];
+  const actions = ["Reply", "Retruth", "Like", "Share"];
+
+  const posts = [];
+
+  sources.forEach((source, sourceIndex) => {
+    for (let i = 0; i < 15; i += 1) {
+      const scenario = scenarios[(i + sourceIndex * 3) % scenarios.length];
+      const punchline = punchlines[(i * 2 + sourceIndex) % punchlines.length];
+      const stats = statsSeed[(i + sourceIndex) % statsSeed.length];
+
+      posts.push({
+        author: source.author,
+        handle: source.handle,
+        meta: source.meta,
+        badge: source.badge,
+        kind: source.kind,
+        avatar: source.avatar,
+        body: `${source.openings[i % source.openings.length]} ${scenario} ${punchline} ${source.closers[i % source.closers.length]}`,
+        stats,
+        time: timeSeed[(i + sourceIndex * 2) % timeSeed.length],
+        published: publishedSeed[(i + sourceIndex) % publishedSeed.length],
+        actions
+      });
+    }
+  });
+
+  return posts;
+}
 
 function escapeHtml(value) {
   return String(value)
@@ -185,6 +272,34 @@ function setActiveTab(view) {
   });
 }
 
+function centerNodeInRail(node, rail, instant = false) {
+  if (!node || !rail) {
+    return;
+  }
+
+  if (rail.scrollWidth <= rail.clientWidth + 4) {
+    return;
+  }
+
+  const railRect = rail.getBoundingClientRect();
+  const nodeRect = node.getBoundingClientRect();
+  const maxLeft = rail.scrollWidth - rail.clientWidth;
+  const currentLeft = rail.scrollLeft;
+  const targetLeft = Math.max(
+    0,
+    Math.min(maxLeft, currentLeft + (nodeRect.left - railRect.left) - railRect.width / 2 + nodeRect.width / 2)
+  );
+
+  rail.scrollTo({ left: targetLeft, behavior: instant ? "auto" : "smooth" });
+}
+
+function syncActiveTabIntoView(view, instant = false) {
+  const activeTab = tabs.find((tab) => tab.dataset.view === view);
+  window.requestAnimationFrame(() => {
+    centerNodeInRail(activeTab, tabsRail, instant);
+  });
+}
+
 function setActivePane(view) {
   panes.forEach((pane) => {
     pane.classList.toggle("is-active", pane.dataset.pane === view);
@@ -194,8 +309,16 @@ function setActivePane(view) {
 function renderSocials() {
   socialFeed.innerHTML = socialState.posts
     .map((post) => {
-      const truthClass = post.kind === "agency" ? "truth-post truth-post-agency" : "truth-post";
+      const truthClass = [
+        "truth-post",
+        post.kind === "agency" ? "truth-post-agency" : "",
+        post.kind === "trump" ? "truth-post-trump" : "",
+        post.kind === "diplomatic" ? "truth-post-diplomatic" : ""
+      ]
+        .filter(Boolean)
+        .join(" ");
       const stats = post.stats.map((item) => `<span>${escapeHtml(item)}</span>`).join("");
+      const actions = post.actions.map((item) => `<span>${escapeHtml(item)}</span>`).join("");
 
       return `
         <article class="${truthClass}">
@@ -203,14 +326,23 @@ function renderSocials() {
             <div class="truth-head-main">
               <div class="truth-avatar">${escapeHtml(post.avatar)}</div>
               <div class="truth-meta">
-                <strong>${escapeHtml(post.author)}</strong>
+                <div class="truth-name-row">
+                  <strong>${escapeHtml(post.author)}</strong>
+                  <span class="truth-verified">PARODY</span>
+                </div>
                 <span>${escapeHtml(post.handle)} &bull; ${escapeHtml(post.meta)}</span>
               </div>
             </div>
-            <span class="truth-badge">${escapeHtml(post.badge)}</span>
+            <div class="truth-post-aside">
+              <span class="truth-badge">${escapeHtml(post.badge)}</span>
+              <span class="truth-time">${escapeHtml(post.time)}</span>
+            </div>
           </div>
           <p>${escapeHtml(post.body)}</p>
+          <div class="truth-published">${escapeHtml(post.published)}</div>
+          <div class="truth-divider"></div>
           <div class="truth-stats">${stats}</div>
+          <div class="truth-actions">${actions}</div>
         </article>
       `;
     })
@@ -220,8 +352,37 @@ function renderSocials() {
   sideNote.textContent = socialState.note;
 }
 
+function setActiveSocialPane(pane, options = {}) {
+  const { instant = false } = options;
+  const nextPane = validSocialPanes.includes(pane) ? pane : "truths";
+
+  socialsUiState.activePane = nextPane;
+
+  socialSubtabs.forEach((tab) => {
+    tab.classList.toggle("is-active", tab.dataset.socialTab === nextPane);
+  });
+
+  socialSubviews.forEach((view) => {
+    view.classList.toggle("is-active", view.dataset.socialPane === nextPane);
+  });
+
+  const activeSocialTab = socialSubtabs.find((tab) => tab.dataset.socialTab === nextPane);
+  window.requestAnimationFrame(() => {
+    centerNodeInRail(activeSocialTab, socialSubtabsRail, instant);
+  });
+}
+
 function scrollPanel(element) {
   if (!element) {
+    return;
+  }
+
+  const canScrollX = element.scrollWidth - element.clientWidth > 24;
+  const canScrollY = element.scrollHeight - element.clientHeight > 24;
+
+  if (canScrollX && (!canScrollY || window.matchMedia("(max-width: 760px)").matches)) {
+    const distance = Math.max(220, Math.round(element.clientWidth * 0.82));
+    element.scrollBy({ left: distance, behavior: "smooth" });
     return;
   }
 
@@ -232,6 +393,7 @@ function scrollPanel(element) {
 function handleAction(action) {
   if (action === "more-posts") {
     activateView("socials");
+    setActiveSocialPane("truths");
     window.setTimeout(() => {
       scrollPanel(socialFeed);
     }, 90);
@@ -240,6 +402,7 @@ function handleAction(action) {
 
   if (action === "more-debunking") {
     activateView("socials");
+    setActiveSocialPane("fools");
     window.setTimeout(() => {
       scrollPanel(debunkScroll);
     }, 90);
@@ -247,6 +410,12 @@ function handleAction(action) {
   }
 
   if (action === "simulate-chaos") {
+    activateView("socials");
+    setActiveSocialPane("simulate");
+    return;
+  }
+
+  if (action === "launch-simulation") {
     window.location.assign("simulate.html");
   }
 }
@@ -294,14 +463,18 @@ function markViewVisited(view) {
   }
 }
 
-function activateView(view) {
+function activateView(view, options = {}) {
+  const { instant = false } = options;
+
   screenUi.dataset.viewTheme = view;
   setActiveTab(view);
+  syncActiveTabIntoView(view, instant);
   setActivePane(view);
   setMetrics(view);
 
   if (view === "socials") {
     renderSocials();
+    setActiveSocialPane(socialsUiState.activePane, { instant });
   }
 
   if (!validSequencePhases.has(forcedSequencePhase)) {
@@ -312,6 +485,12 @@ function activateView(view) {
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
     activateView(tab.dataset.view);
+  });
+});
+
+socialSubtabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    setActiveSocialPane(tab.dataset.socialTab);
   });
 });
 
@@ -329,12 +508,47 @@ if (alertSymbol) {
 }
 
 const initialView = urlParams.get("view");
-activateView(validViews.includes(initialView) ? initialView : validViews[0]);
+activateView(validViews.includes(initialView) ? initialView : validViews[0], { instant: true });
 setSequencePhase("idle");
 
 if (validSequencePhases.has(forcedSequencePhase)) {
   sequenceState.triggered = true;
   setSequencePhase(forcedSequencePhase);
+}
+
+window.addEventListener("resize", () => {
+  const activeTab = tabs.find((tab) => tab.classList.contains("is-active"));
+  const activeSocialTab = socialSubtabs.find((tab) => tab.classList.contains("is-active"));
+
+  if (activeTab) {
+    syncActiveTabIntoView(activeTab.dataset.view, true);
+  }
+
+  centerNodeInRail(activeSocialTab, socialSubtabsRail, true);
+});
+
+window.addEventListener("load", () => {
+  const activeTab = tabs.find((tab) => tab.classList.contains("is-active"));
+  const activeSocialTab = socialSubtabs.find((tab) => tab.classList.contains("is-active"));
+
+  if (activeTab) {
+    syncActiveTabIntoView(activeTab.dataset.view, true);
+  }
+
+  centerNodeInRail(activeSocialTab, socialSubtabsRail, true);
+});
+
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(() => {
+    const activeTab = tabs.find((tab) => tab.classList.contains("is-active"));
+    const activeSocialTab = socialSubtabs.find((tab) => tab.classList.contains("is-active"));
+
+    if (activeTab) {
+      syncActiveTabIntoView(activeTab.dataset.view, true);
+    }
+
+    centerNodeInRail(activeSocialTab, socialSubtabsRail, true);
+  });
 }
 
 window.setInterval(updateClock, 1000);
