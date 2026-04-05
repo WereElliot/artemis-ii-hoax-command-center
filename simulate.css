@@ -660,6 +660,8 @@ h1 {
   max-height: none;
   height: 100%;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
   color: #e6f6ff;
   font-size: 1.04rem;
   line-height: 1.5;
@@ -874,9 +876,25 @@ h1 {
     display: grid;
   }
 
+  .sim-shell,
+  .side-column,
+  .scene-panel,
+  .log-panel,
+  .outcome-panel,
+  .status-panel {
+    min-height: 0;
+    height: auto;
+  }
+
   .scene {
     height: auto;
     min-height: 420px;
+  }
+
+  .event-log {
+    height: auto;
+    overflow: visible;
+    overscroll-behavior: auto;
   }
 
   .earth {

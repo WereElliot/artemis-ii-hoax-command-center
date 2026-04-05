@@ -452,50 +452,94 @@
 
                 <section class="view-pane socials-view" data-pane="socials">
                   <div class="socials-layout">
-                    <section class="main-grid socials-grid">
-                      <section class="panel socials-panel">
-                        <div class="panel-header">
-                          <span>TRUTH SOCIAL FEED</span>
-                          <span>PARODY MOCK POSTS</span>
-                      </div>
+                    <nav class="socials-subtabs" aria-label="Socials navigation">
+                      <button class="socials-subtab is-active" data-social-tab="truths" type="button">TRUTH POSTS</button>
+                      <button class="socials-subtab" data-social-tab="fools" type="button">FOOLS DOSSIER</button>
+                      <button class="socials-subtab" data-social-tab="simulate" type="button">SIMULATE</button>
+                    </nav>
 
-                      <div class="social-feed scroll-region" id="social-feed"></div>
-
-                      <section class="socials-actions" aria-label="Socials control actions">
-                        <button class="action-button" type="button" data-action="more-posts">
-                          <span>VIEW MORE</span>
-                          <strong>TRUTH POSTS</strong>
-                        </button>
-                        <button class="action-button" type="button" data-action="more-debunking">
-                          <span>READ MORE</span>
-                          <strong>FOOLS DEBUNKING</strong>
-                        </button>
-                        <button class="action-button" type="button" data-action="simulate-chaos">
-                          <span>SIMULATE</span>
-                          <strong>TEHRAN CHAOS</strong>
-                        </button>
-                      </section>
-                    </section>
-
-                      <section class="panel debunk-panel">
-                        <div class="panel-header">
-                          <span>FOOLS DEBUNKING THE MOON LANDING</span>
-                          <span>CHAOS DOSSIER</span>
-                        </div>
-
-                        <div class="debunk-scroll scroll-region" id="debunk-scroll">
-                          <ul class="debunk-list">
-                            <li>Flag waving in vacuum? Studio fan confirmed during Tehran incident</li>
-                            <li>No stars in photos? Iranian air defense lights too bright</li>
-                            <li>Shadows don't match? Multiple spotlights while orbiting Strait of Hormuz</li>
-                            <li>Artemis II keeps getting shot down &mdash; clear proof the Moon is fake and Iran knows it!</li>
-                          </ul>
-
-                          <div class="side-note">
-                            <span>APRIL FOOLS ANALYSIS</span>
-                            <strong>Official NASA blue aesthetic, completely unofficial conspiracy logic.</strong>
+                    <section class="socials-subviews">
+                      <section class="socials-subview is-active" data-social-pane="truths">
+                        <section class="panel socials-panel">
+                          <div class="panel-header">
+                            <span>TRUTH SOCIAL FEED</span>
+                            <span>REAL NAMES, PARODY POSTS</span>
                           </div>
-                        </div>
+
+                          <div class="social-feed scroll-region" id="social-feed"></div>
+                        </section>
+                      </section>
+
+                      <section class="socials-subview" data-social-pane="fools">
+                        <section class="panel debunk-panel">
+                          <div class="panel-header">
+                            <span>FOOLS DEBUNKING THE MOON LANDING</span>
+                            <span>CHAOS DOSSIER</span>
+                          </div>
+
+                          <div class="debunk-scroll scroll-region" id="debunk-scroll">
+                            <ul class="debunk-list">
+                              <li>Flag waving in vacuum? Studio fan confirmed during Tehran incident</li>
+                              <li>No stars in photos? Iranian air defense lights too bright</li>
+                              <li>Shadows don't match? Multiple spotlights while orbiting Strait of Hormuz</li>
+                              <li>Artemis II keeps getting shot down &mdash; clear proof the Moon is fake and Iran knows it!</li>
+                            </ul>
+
+                            <div class="side-note">
+                              <span>APRIL FOOLS ANALYSIS</span>
+                              <strong>Official NASA blue aesthetic, completely unofficial conspiracy logic.</strong>
+                            </div>
+                          </div>
+                        </section>
+                      </section>
+
+                      <section class="socials-subview" data-social-pane="simulate">
+                        <section class="panel socials-sim-panel">
+                          <div class="panel-header">
+                            <span>SIMULATION LAUNCH BAY</span>
+                            <span>ALIEN DESCENT SCENARIO</span>
+                          </div>
+
+                          <div class="simulate-callout">
+                            Run the moon-landing parody sequence where Houston telemetry stays clean while alien escorts, random failures, and late-stage chaos keep attacking the descent.
+                          </div>
+
+                          <div class="simulate-preview-grid">
+                            <div class="threat-card">
+                              <span>SIM ENGINE</span>
+                              <strong>ALIEN DESCENT</strong>
+                            </div>
+                            <div class="threat-card">
+                              <span>FAILURE MODEL</span>
+                              <strong>RANDOMIZED</strong>
+                            </div>
+                            <div class="threat-card">
+                              <span>LANDING STATE</span>
+                              <strong>UNSTABLE</strong>
+                            </div>
+                            <div class="threat-card">
+                              <span>HOUSTON CHATTER</span>
+                              <strong>CONSTANT</strong>
+                            </div>
+                          </div>
+
+                          <div class="simulate-brief">
+                            <div class="subsection-label">RUN PROFILE</div>
+                            <ul class="simulate-list">
+                              <li>Alien escorts appear during approach and correction phases.</li>
+                              <li>Touchdown can succeed cleanly or break into failure mode without warning.</li>
+                              <li>Mission logs keep updating while the landing zone becomes increasingly absurd.</li>
+                              <li>The full simulator opens as a separate dedicated page when launched.</li>
+                            </ul>
+                          </div>
+
+                          <section class="socials-actions socials-actions-solo" aria-label="Simulation actions">
+                            <button class="action-button" type="button" data-action="launch-simulation">
+                              <span>LAUNCH</span>
+                              <strong>FULL SIMULATOR</strong>
+                            </button>
+                          </section>
+                        </section>
                       </section>
                     </section>
                   </div>
@@ -659,20 +703,6 @@
                 </section>
               </div>
 
-              <section class="socials-action-bar" aria-label="Socials control actions">
-                <button class="action-button" type="button" data-action="more-posts">
-                  <span>VIEW MORE</span>
-                  <strong>TRUTH POSTS</strong>
-                </button>
-                <button class="action-button" type="button" data-action="more-debunking">
-                  <span>READ MORE</span>
-                  <strong>FOOLS DEBUNKING</strong>
-                </button>
-                <button class="action-button" type="button" data-action="simulate-chaos">
-                  <span>SIMULATE</span>
-                  <strong>TEHRAN CHAOS</strong>
-                </button>
-              </section>
             </section>
           </main>
         </div>
